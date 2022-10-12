@@ -1,0 +1,25 @@
+{
+  "name": "service_dash",
+  "version": "1.0.0",
+  "description": "Services Dashboard",
+  "author": "Department for International Trade",
+  "licence": "MIT",
+  "dependencies": {
+    "govuk-frontend": "^4.3.1"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "webpack": "^5.74.0",
+    "webpack-bundle-tracker": "^1.6.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "scripts": {
+    "dev": "npx webpack-cli --config webpack.config.js --watch",
+    "build": "npx webpack-cli --config webpack.config.js --stats-children",
+    "clean": "rm -f ./run/static/webpack_bundles/*"
+  }
+}

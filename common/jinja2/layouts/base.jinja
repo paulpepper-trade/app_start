@@ -1,0 +1,60 @@
+{% extends "template.njk" %}
+
+{% from "components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% set service_name = "Service Dashboard" %}
+
+{% block pageTitle %}
+  {{ page_title }} | {{ service_name }}
+{% endblock %}
+
+{% block head %}
+  {{ render_bundle("main", "css") }}
+  {% block styles %}{% endblock %}
+{% endblock %}
+
+{% block header %}
+    {{ govukHeader({
+    "homepageUrl": "https://gov.uk/",
+    "serviceName": service_name,
+    "serviceUrl": "/",
+    "navigation": [
+        {
+        "href": url("logout") if request.user.is_authenticated else settings.LOGIN_URL,
+        "text": "Sign out" if request.user.is_authenticated else "Sign In"
+        },
+    ]
+    }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    "tag": {
+      "text": "alpha"
+    },
+    "html": "This is a new service - your feedback will help us to improve it.",
+    "contentLicence": "None"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Service Dashboard</h1>
+    </div>
+  </div>  
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    "meta": {
+      'html': 'Built by <a href="https://digitaltrade.blog.gov.uk/about-the-department-for-international-trade/" class="govuk-footer__link">DDaT @ Department for International Trade</a>'
+    },
+    "contentLicence": "MIT",
+    "copyright": "Gov.UK"
+  }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+  {{ render_bundle("main", "js") }}
+{% endblock %}

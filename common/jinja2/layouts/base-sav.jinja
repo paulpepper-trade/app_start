@@ -1,0 +1,44 @@
+{% extends "template.njk" %}
+
+{% set assetPath = url('static', filename='').rstrip('/') %}
+
+{% block pageTitle %}GOV.UK Service Dash{% endblock %}
+
+{% block head %}
+  <meta name="description" content="GOV.UK Service Dash">
+  <meta name="keywords" content="GOV.UK, govuk, gov, government, uk, service-dash, service, dashboard">
+  <meta name="author" content="Department for International Trade">
+  <!--[if gt IE 8]><!--><link rel="stylesheet" type="text/css" href="{{ url('static', filename='govuk-frontend-4.2.0.min.css') }}" /><!--<![endif]-->
+  <!--[if IE 8]><link rel="stylesheet" type="text/css" href="{{ url('static', filename='govuk-frontend-ie8-4.2.0.min.css') }}" /><![endif]-->
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    'homepageUrl': url('index'),
+    'serviceName': "GOV.UK Frontend Jinja Demo",
+    'serviceUrl': url('index')
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Service Dashboard</h1>
+    </div>
+  </div>  
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    'meta': {
+      'html': 'Built by <a href="https://digitaltrade.blog.gov.uk/about-the-department-for-international-trade/" class="govuk-footer__link">DDaT @ Department for International Trade</a>'
+    }
+  }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+  <!--[if gt IE 8]><!-->
+  <script src="{{ url('static', filename='govuk-frontend-4.2.0.min.js') }}"> </script>
+  <script>window.GOVUKFrontend.initAll()</script>
+  <!--<![endif]-->
+{% endblock %}
