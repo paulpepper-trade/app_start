@@ -20,7 +20,15 @@
 
     python manage.py createsuperuser
 
+# Build the fontend
 
-# Run the Server
+    npm run build
+
+Or to watch and automatically build when files are changed:
+
+    npm run dev
+
+
+# Run the server
 
 python manage.py runserver
