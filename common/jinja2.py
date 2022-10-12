@@ -1,6 +1,8 @@
 import os
 import re
 
+from functools import partial
+
 from crispy_forms.utils import render_crispy_form
 from django.conf import settings
 from django.contrib import messages
@@ -116,12 +118,13 @@ def environment(**kwargs):
             "get_messages": messages.get_messages,
             "localtime": localtime,
             "pluralize": pluralize,
-            "render_bundle": render_bundle,
             "settings": settings,
             "static": static,
             "url": reverse,
             "webpack_static": webpack_static,
         },
     )
+    env.globals["render_bundle"] = partial(render_bundle, env.globals)
+
 
     return env
