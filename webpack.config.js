@@ -62,6 +62,7 @@ module.exports = {
               sassOptions: {
                 includePaths: [
                 ],
+                quietDeps: true
               },
             },
           },
