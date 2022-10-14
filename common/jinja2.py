@@ -1,6 +1,5 @@
 import os
 import re
-
 from functools import partial
 
 from crispy_forms.utils import render_crispy_form
@@ -125,6 +124,5 @@ def environment(**kwargs):
         },
     )
     env.globals["render_bundle"] = partial(render_bundle, env.globals)
-
 
     return env

@@ -1,4 +1,5 @@
-"""service_dash URL Configuration
+"""
+service_dash URL Configuration.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -19,11 +20,10 @@ from django.urls import include
 from django.urls import path
 from django.views.generic.base import RedirectView
 
-
 urlpatterns = [
     path("", RedirectView.as_view(pattern_name="dashboard-index"), name="home"),
     path("dashboard/", include("dashboard.urls")),
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
 ]
 
 if "debug_toolbar" in settings.INSTALLED_APPS:
