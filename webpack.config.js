@@ -33,21 +33,8 @@ module.exports = {
       // Use file-loader to handle image assets
       {
         test: /\.(png|jpe?g|gif|woff2?|svg|ico)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              // Note: `django-webpack-loader`'s `webpack_static` tag does
-              //       not yet pick up versioned assets, so we need to
-              //       generate image assets without a hash in the
-              //       filename.
-              // c.f.: https://github.com/owais/django-webpack-loader/issues/138
-              name: '[name].[ext]',
-            }
-          }
-        ]
+        type: "asset/resource"
       },
-
       // Extract compiled SCSS separately from JS
       {
         test: /\.s[ac]ss$/i,
@@ -60,8 +47,6 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sassOptions: {
-                includePaths: [
-                ],
                 quietDeps: true
               },
             },
