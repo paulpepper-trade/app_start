@@ -1,4 +1,12 @@
-# Service Dash
+# App Start
+
+Clone this skeleton GDS style application to get started. The project includes all the great foundational features to be found in https://github.com/uktrade/tamato/, including:
+
+GDS styling setup.
+GDS Crispy forms.
+Nunjucks integration with a transformer to Jinja2 templating.
+Webpack build integration.
+
 
 ## Create a Python virtual environment.
 
