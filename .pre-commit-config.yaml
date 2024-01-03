@@ -1,10 +1,10 @@
 repos:
   - repo: https://github.com/asottile/add-trailing-comma
-    rev: v2.2.3
+    rev: v2.4.0
     hooks:
       - id: add-trailing-comma
   - repo: https://github.com/myint/autoflake.git
-    rev: v1.4
+    rev: v2.1.1
     hooks:
       - id: autoflake
         args:
@@ -14,12 +14,12 @@ repos:
             "--remove-unused-variable",
           ]
   - repo: https://github.com/pycqa/isort
-    rev: 5.10.1
+    rev: 5.12.0
     hooks:
       - id: isort
         args: [--force-single-line-imports]
   - repo: https://github.com/myint/docformatter.git
-    rev: v1.4
+    rev: v1.7.5
     hooks:
       - id: docformatter
         args:
@@ -30,10 +30,10 @@ repos:
             "--pre-summary-newline",
           ]
   - repo: https://github.com/psf/black
-    rev: 22.3.0
+    rev: 23.7.0
     hooks:
       - id: black
   - repo: https://github.com/ikamensh/flynt/
-    rev: '0.76'
+    rev: '0.78'
     hooks:
       - id: flynt
